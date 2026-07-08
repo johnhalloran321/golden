@@ -5,25 +5,26 @@ requires = [
 ]
 
 [tool.setuptools.package-data]
-mypkg = ["*.gz"]
+golden = ["*.gz"]
 
 # https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
 [project]
 name = "golden_retriever"
-version = "0.0.0"
-description = "Custom Langchain Embedding and VectorDB APIs"
+version = "0.1.0"
+description = "Custom LangChain retrieval APIs (Chroma- and FAISS-backed) for rapid ML experimentation"
 readme = "README.md"
 requires-python = ">=3.10,<3.12"
+license = {text = "Apache-2.0"}
 authors = [
     {name = "John Halloran", email = "johnhalloran321@gmail.com"},
 ]
-keywords = []
+keywords = ["retrieval", "rag", "vector-database", "langchain", "chromadb", "faiss", "embeddings"]
 # https://pypi.org/classifiers/
 classifiers = [
-    "Development Status :: 1 - Planning",
+    "Development Status :: 4 - Beta",
     "Environment :: GPU",
     "Intended Audience :: Developers",
-    "Intended Audience :: Science/Research ",
+    "Intended Audience :: Science/Research",
     "Natural Language :: English",
     "Operating System :: Microsoft :: Windows",
     "Operating System :: POSIX",
@@ -32,12 +33,11 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
     "Typing :: Typed",
 ]
+
 dependencies = [
     "langchain==0.1.9",
     "langchain-community==0.0.24",
@@ -53,7 +53,15 @@ dependencies = [
     "opt_einsum",
 ]
 
+[project.urls]
+Homepage = "https://github.com/johnhalloran321/golden"
+Repository = "https://github.com/johnhalloran321/golden"
+Issues = "https://github.com/johnhalloran321/golden/issues"
+
 [project.optional-dependencies]
+faiss = [
+    "faiss-cpu",
+]
 all = [
     "pytest>=7.0.0",
     "pytest-cov",

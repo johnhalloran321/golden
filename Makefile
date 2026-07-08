@@ -14,3 +14,7 @@ install: ## Install requirements and golden itself in editable mode
 develop: ## Install requirements and golden itself in editable mode
 	pip install --upgrade pip
 	pip install -e .[all]
+
+.PHONY: test
+test: ## Run the test suite
+	pytest $(TESTS_DIR)
