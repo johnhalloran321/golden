@@ -1,0 +1,76 @@
+[build-system]
+requires = [
+    "setuptools>=68.1.2",
+    "wheel",
+]
+
+[tool.setuptools.package-data]
+mypkg = ["*.gz"]
+
+# https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
+[project]
+name = "golden_retriever"
+version = "0.0.0"
+description = "Custom Langchain Embedding and VectorDB APIs"
+readme = "README.md"
+requires-python = ">=3.10,<3.12"
+authors = [
+    {name = "John Halloran", email = "johnhalloran321@gmail.com"},
+]
+keywords = []
+# https://pypi.org/classifiers/
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Environment :: GPU",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research ",
+    "Natural Language :: English",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX",
+    "Operating System :: Unix",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Typing :: Typed",
+]
+dependencies = [
+    "langchain==0.1.9",
+    "langchain-community==0.0.24",
+    "langchain-core==0.1.28",
+    "langsmith==0.1.12",
+    "langchain-openai",
+    "tiktoken",
+    "chromadb",
+    "langchain",
+    "torch",
+    "transformers",
+    "einops",
+    "opt_einsum",
+]
+
+[project.optional-dependencies]
+all = [
+    "pytest>=7.0.0",
+    "pytest-cov",
+    "black",
+    "flake8",
+    "mypy",
+    "isort",
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov",
+    "black",
+    "flake8",
+    "mypy",
+    "isort",
+]
+test = [
+    "pytest>=7.0.0",
+    "pytest-cov",
+]
